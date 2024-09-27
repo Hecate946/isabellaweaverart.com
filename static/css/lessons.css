@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'Azeret Mono';
+    background-color: #fff;
+}
+
+h4 {
+    padding: 10px 0;
+    margin: 0;
+}
+
+.light {
+    line-height: 1.5;
+}
+
+.list-unstyled li {
+    line-height: 1.5;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Top Section Styles */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-side, .right-side {
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Equal split for the left and right side */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.booking-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.booking-section .short-div {
+    padding: 20px;
+}
+
+.left-side {
+    background-color: lightblue;
+}
+
+.right-side {
+    background-color: white;
+}
+
+/* Flex container for the lists */
+.flex-lists {
+    display: flex;
+    justify-content: space-between; /* Space between the two lists */
+    padding: 20px 0;
+}
+
+.flex-lists .short-div {
+    width: 48%; /* Ensure both lists take up equal width */
+}
+
+/* Bottom Section Grid Styles */
+.bottom-section {
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+    gap: 10px;
+}
+
+.grid img {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Enforce a 3:4 aspect ratio */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .top-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row for smaller screens */
+    }
+
+    .flex-lists {
+        flex-direction: column; /* Stack the lists vertically on smaller screens */
+    }
+
+    .flex-lists .short-div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+  

@@ -1,0 +1,12 @@
+.contact-container {
+    height: calc(100vh - 60px); /* Subtract the height of the navbar from 100vh */
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
+
+a.email {
+    font-size: 16px;
+    font-weight: bold;
+    color: #E74C36;
+}

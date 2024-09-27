@@ -1,0 +1,114 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Azeret Mono', monospace;
+    background-color: #fff; /* Light background color */
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* Define 12 equal-width columns */
+    border-bottom: 1px solid #ccc; /* Bottom border */
+    height: 60px; /* Fixed height for the navbar */
+}
+
+/* Navbar Sections */
+.navbar-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-left {
+    grid-column: span 2;
+    padding: 0 20px;
+}
+
+.navbar-center-left {
+    grid-column: span 6;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr); /* Divide the 6 columns into three equal parts, each 2 columns wide */
+}
+
+.navbar-center-right {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-right {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-section:not(:last-child) {
+    border-right: 1px solid #ccc; /* Divider between sections */
+}
+
+.navbar-brand {
+    font-size: 18px;
+}
+
+.navbar-brand-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 200;
+    color: #000; 
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center text within its container */
+}
+
+/* Icon Links */
+.icon-link {
+    font-size: 16px;
+    color: #000; /* Dark text color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Centering each nav link within its container */
+.nav-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        grid-template-columns: repeat(6, 1fr); /* Adjust grid to 6 columns for smaller screens */
+        grid-template-rows: auto auto;
+    }
+
+    .navbar-left {
+        grid-column: span 4; /* Navbar brand and icons take half width */
+        height: 30px;
+    }
+    
+    .navbar-center-left {
+        grid-column: span 6; /* Nav links and additional icons take 4 columns */
+        grid-row: 2; /* Place in the second row */
+        border-top: 1px solid #ccc; /* Add top border */
+        height: 30px;
+    }
+    
+    .navbar-center-right {
+        grid-column: span 2; /* Nav links and additional icons take full width */
+        height: 30px;
+    }
+
+    .navbar-right {
+        display: none;
+        /* grid-column: span 2; Social icons take full width */
+        /* grid-row: 1 / span 2; Place in the second row */
+    }
+}
