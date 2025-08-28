@@ -36,21 +36,21 @@
 }
 
 #homepage-image img {
-  /* Frame thickness (slightly slimmer than the gold one) */
-  border: 22px solid transparent;
-  padding: 10px;
+  /* Thinner frame */
+  border: 16px solid transparent;
+  padding: 8px;
   background-color: #fdfdf9; /* neutral backdrop */
 
   box-sizing: border-box;
 
-  /* Dark realistic wood gradient */
+  /* Refined dark wood gradient (no light edges) */
   border-image: linear-gradient(
     135deg,
-    #1a0d06 0%,   /* deep near-black brown */
-    #2b1408 20%,  /* dark espresso */
-    #3d1f0d 40%,  /* rich walnut core */
-    #2a1208 70%,  /* shadow depth */
-    #120805 100%  /* almost black edges */
+    #1a0d06 0%,    /* deep near-black brown */
+    #2b1408 25%,   /* espresso */
+    #3d1f0d 50%,   /* rich walnut */
+    #2a1208 75%,   /* shadow */
+    #1a0d06 100%   /* solid dark edge (fixes white line) */
   ) 1;
 
   /* Depth + varnish polish */
@@ -58,12 +58,12 @@
     0 0 15px rgba(0, 0, 0, 0.9),         /* strong outer drop */
     inset 0 0 18px rgba(0, 0, 0, 0.8),   /* carved inner depth */
     inset 0 0 28px rgba(255, 255, 255, 0.05), /* subtle glossy varnish */
-    8px 8px 20px rgba(0,0,0,0.7),        /* directional shadow */
-    -4px -4px 10px rgba(255,255,255,0.04); /* top-left sheen */
+    6px 6px 18px rgba(0,0,0,0.7),        /* directional shadow */
+    -3px -3px 8px rgba(255,255,255,0.04); /* faint sheen */
 
-  border-radius: 10px;
+  border-radius: 8px;
 
-  /* Refined woodgrain: subtle, uneven streaks */
+  /* Subtle woodgrain */
   background-image: 
     repeating-linear-gradient(
       90deg,
@@ -79,35 +79,34 @@
       transparent 2px,
       transparent 10px
     ),
-    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.07), transparent 70%),
-    radial-gradient(circle at 70% 80%, rgba(0,0,0,0.2), transparent 70%);
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.06), transparent 70%),
+    radial-gradient(circle at 70% 80%, rgba(0,0,0,0.25), transparent 70%);
   background-blend-mode: overlay, overlay, soft-light, multiply;
   position: relative;
 }
 
-/* Optional subtle carved medallions */
+/* Optional carved medallions */
 #homepage-image img::before,
 #homepage-image img::after {
   content: "";
   position: absolute;
-  width: 40px;
-  height: 40px;
-  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  width: 36px;
+  height: 36px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
 
 /* Top-left */
 #homepage-image img::before {
-  top: -12px;
-  left: -12px;
-  box-shadow: inset 0 0 12px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.1);
+  top: -10px;
+  left: -10px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.8), 0 0 8px rgba(255,255,255,0.08);
 }
 
 /* Bottom-right */
 #homepage-image img::after {
-  bottom: -12px;
-  right: -12px;
-  box-shadow: inset 0 0 12px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.1);
+  bottom: -10px;
+  right: -10px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.8), 0 0 8px rgba(255,255,255,0.08);
 }
-
