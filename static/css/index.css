@@ -1,17 +1,58 @@
+.homepage-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
 .grid-container {
-    height: calc(100vh - 60px); /* Subtract the height of the navbar from 100vh */
+    height: calc(100vh - 60px);
+    /* Subtract the height of the navbar from 100vh */
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* Create 12 equal-width columns */
+    grid-template-columns: repeat(12, 1fr);
+    /* Create 12 equal-width columns */
+    z-index: 1;
+    position: relative;
 }
 
 .grid-item {
-    height: 100%; /* Each box has a height of 65px */
-    border-right: 1px solid #ccc; /* Gridlines for the columns */
+    height: 100%;
+    /* Each box has a height of 65px */
+    border-right: 1px solid #ccc;
+    /* Gridlines for the columns */
 }
 
-/* Optional: Responsive behavior for smaller screens */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(6, 1fr); /* Change to 6 columns on smaller screens */
+        grid-template-columns: repeat(6, 1fr);
+        /* Change to 6 columns on smaller screens */
     }
+}
+
+#homepage-image {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 50%;
+    pointer-events: none;
+}
+
+#homepage-image img {
+  border: 10px solid #9e7d40; /* Darker gold border */
+  padding: 8px;
+  background-color: #f4e1a1; /* Lighter background to give a sense of depth */
+  
+  /* Ensure total width/height accounts for border and padding */
+  box-sizing: border-box; 
+
+  /* Create a darker gold, carved effect using shadows */
+  box-shadow:
+    0 0 20px rgba(0, 0, 0, 0.6),  /* Outer dark shadow */
+    inset 0 0 10px rgba(0, 0, 0, 0.6),  /* Inset shadow to create depth */
+    0 0 40px rgba(158, 125, 64, 0.8),  /* Soft glowing outer light */
+    inset 0 0 20px rgba(158, 125, 64, 0.5); /* Inner glowing gold shadow */
+  
+  border-radius: 12px; /* Rounded corners for a softer look */
+  
+  /* Optional: adding some texture to make it feel more regal */
+  background-image: linear-gradient(45deg, rgba(158, 125, 64, 0.1) 25%, transparent 25%, transparent 75%, rgba(158, 125, 64, 0.1) 75%, rgba(158, 125, 64, 0.1)), linear-gradient(45deg, rgba(158, 125, 64, 0.1) 25%, transparent 25%, transparent 75%, rgba(158, 125, 64, 0.1) 75%, rgba(158, 125, 64, 0.1));
+  background-size: 8px 8px;  /* Adjust for texture size */
 }
