@@ -36,23 +36,78 @@
 }
 
 #homepage-image img {
-  border: 10px solid #9e7d40; /* Darker gold border */
-  padding: 8px;
-  background-color: #f4e1a1; /* Lighter background to give a sense of depth */
-  
-  /* Ensure total width/height accounts for border and padding */
-  box-sizing: border-box; 
+  /* Frame thickness (slightly slimmer than the gold one) */
+  border: 22px solid transparent;
+  padding: 10px;
+  background-color: #fdfdf9; /* neutral backdrop */
 
-  /* Create a darker gold, carved effect using shadows */
+  box-sizing: border-box;
+
+  /* Dark realistic wood gradient */
+  border-image: linear-gradient(
+    135deg,
+    #1a0d06 0%,   /* deep near-black brown */
+    #2b1408 20%,  /* dark espresso */
+    #3d1f0d 40%,  /* rich walnut core */
+    #2a1208 70%,  /* shadow depth */
+    #120805 100%  /* almost black edges */
+  ) 1;
+
+  /* Depth + varnish polish */
   box-shadow:
-    0 0 20px rgba(0, 0, 0, 0.6),  /* Outer dark shadow */
-    inset 0 0 10px rgba(0, 0, 0, 0.6),  /* Inset shadow to create depth */
-    0 0 40px rgba(158, 125, 64, 0.8),  /* Soft glowing outer light */
-    inset 0 0 20px rgba(158, 125, 64, 0.5); /* Inner glowing gold shadow */
-  
-  border-radius: 12px; /* Rounded corners for a softer look */
-  
-  /* Optional: adding some texture to make it feel more regal */
-  background-image: linear-gradient(45deg, rgba(158, 125, 64, 0.1) 25%, transparent 25%, transparent 75%, rgba(158, 125, 64, 0.1) 75%, rgba(158, 125, 64, 0.1)), linear-gradient(45deg, rgba(158, 125, 64, 0.1) 25%, transparent 25%, transparent 75%, rgba(158, 125, 64, 0.1) 75%, rgba(158, 125, 64, 0.1));
-  background-size: 8px 8px;  /* Adjust for texture size */
+    0 0 15px rgba(0, 0, 0, 0.9),         /* strong outer drop */
+    inset 0 0 18px rgba(0, 0, 0, 0.8),   /* carved inner depth */
+    inset 0 0 28px rgba(255, 255, 255, 0.05), /* subtle glossy varnish */
+    8px 8px 20px rgba(0,0,0,0.7),        /* directional shadow */
+    -4px -4px 10px rgba(255,255,255,0.04); /* top-left sheen */
+
+  border-radius: 10px;
+
+  /* Refined woodgrain: subtle, uneven streaks */
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.25) 0px,
+      rgba(0,0,0,0.25) 2px,
+      transparent 2px,
+      transparent 10px
+    ),
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.07), transparent 70%),
+    radial-gradient(circle at 70% 80%, rgba(0,0,0,0.2), transparent 70%);
+  background-blend-mode: overlay, overlay, soft-light, multiply;
+  position: relative;
 }
+
+/* Optional subtle carved medallions */
+#homepage-image img::before,
+#homepage-image img::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Top-left */
+#homepage-image img::before {
+  top: -12px;
+  left: -12px;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.1);
+}
+
+/* Bottom-right */
+#homepage-image img::after {
+  bottom: -12px;
+  right: -12px;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.1);
+}
+

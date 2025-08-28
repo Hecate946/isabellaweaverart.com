@@ -3,8 +3,8 @@ const wrapper = document.querySelector('.homepage-wrapper');
 
 let x = 0;
 let y = 0;
-let dx = 3;
-let dy = 3;
+let dx = 2;
+let dy = 2;
 
 let imageWidth, imageHeight;
 let wrapperWidth, wrapperHeight;
