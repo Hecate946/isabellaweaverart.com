@@ -34,6 +34,17 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style for CV link under the about text */
+.about-box .box-items a {
+    font-size: 20px;
+}
+
+/* Equal spacing above and below the CV link */
+.about-box .cv-link {
+    padding: 20px;
 }
 
 /* Responsive behavior for smaller screens */
